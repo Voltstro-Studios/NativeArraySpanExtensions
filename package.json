@@ -1,0 +1,23 @@
+{
+  "name": "dev.voltstro.unitynativearrayspanextensions",
+  "displayName": "Unity Native Array Span Extensions",
+  "version": "1.0.0",
+  "description": "Proves Span/Memory extensions to Unity's NativeArray",
+  "unity": "2021.3",
+  "keywords": [
+    "native",
+    "nativearray",
+    "span",
+    "memory"
+  ],
+  "author": {
+    "name": "Voltstro",
+    "email": "me@voltstro.dev",
+    "url": "https://voltstro.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Voltstro-Studios/UnityNativeArraySpanExtensions"
+  },
+  "type": "library"
+}
