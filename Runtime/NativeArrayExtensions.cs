@@ -4,8 +4,17 @@ using Unity.Collections.LowLevel.Unsafe;
 
 namespace VoltstroStudios.UnityNativeArraySpanExtensions
 {
+    /// <summary>
+    ///     Provides <see cref="Span{T}"/> copying utils to <see cref="NativeArray{T}"/>
+    /// </summary>
     public static class NativeArrayExtensions
     {
+        /// <summary>
+        ///     Copy data from a <see cref="ReadOnlySpan{T}"/> to a <see cref="NativeArray{T}"/>
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="source"></param>
+        /// <typeparam name="T"></typeparam>
         public static unsafe void CopyFrom<T>(this NativeArray<T> array, ReadOnlySpan<T> source)
             where T : unmanaged
         {
@@ -21,6 +30,12 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions
             }
         }
 
+        /// <summary>
+        ///     Copy data from a <see cref="NativeArray{T}"/> to a <see cref="Span{T}"/>
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="dst"></param>
+        /// <typeparam name="T"></typeparam>
         public static unsafe void CopyTo<T>(this NativeArray<T> array, Span<T> dst)
             where T : unmanaged
         {
