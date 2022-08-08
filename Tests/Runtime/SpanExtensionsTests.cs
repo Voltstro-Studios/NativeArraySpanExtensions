@@ -6,22 +6,22 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
 {
     public class SpanExtensionsTests
     {
-        [Test]
-        public void CopyToReadOnlyTest()
+        [GenericTestCase(typeof(byte), new byte[]{1, 4, 6, 7, 54, 98})]
+        [GenericTestCase(typeof(int), new[]{54, 76, 129, 7000, 438, 57, 192, 69})]
+        [GenericTestCase(typeof(float), new[]{0.0002456f, 69.420f, 23f, 90032.2f, 47.6f})]
+        public void CopyToReadOnlyTest<T>(T[] testData)
+            where T : unmanaged
         {
-            NativeArray<byte> testNativeArray = new(new byte[] { 1, 8, 7, 6 }, Allocator.Temp);
+            NativeArray<T> testNativeArray = new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+            
             try
             {
                 Assert.IsTrue(testNativeArray.IsCreated);
+                
+                ReadOnlySpan<T> testReadOnlySpan = testData;
+                testReadOnlySpan.CopyTo(testNativeArray);
 
-                byte[] testNewData = { 7, 4, 3, 5 };
-                ReadOnlySpan<byte> testNewDataSpan = testNewData;
-                testNewDataSpan.CopyTo(testNativeArray);
-
-                for (int i = 0; i < testNewData.Length; i++)
-                {
-                    Assert.AreEqual(testNewData[i], testNativeArray[i]);
-                }
+                TestUtils.ValidateArrays(testNativeArray, testReadOnlySpan);
             }
             finally
             {
@@ -29,22 +29,22 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
             }
         }
         
-        [Test]
-        public void CopyToTest()
+        [GenericTestCase(typeof(byte), new byte[]{1, 4, 6, 7, 54, 98})]
+        [GenericTestCase(typeof(int), new[]{54, 76, 129, 7000, 438, 57, 192, 69})]
+        [GenericTestCase(typeof(float), new[]{0.0002456f, 69.420f, 23f, 90032.2f, 47.6f})]
+        public void CopyToTest<T>(T[] testData)
+            where T : unmanaged
         {
-            NativeArray<byte> testNativeArray = new(new byte[] { 1, 8, 7, 6 }, Allocator.Temp);
+            NativeArray<T> testNativeArray = new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+            
             try
             {
                 Assert.IsTrue(testNativeArray.IsCreated);
+                
+                Span<T> testReadOnlySpan = testData;
+                testReadOnlySpan.CopyTo(testNativeArray);
 
-                byte[] testNewData = { 7, 4, 3, 5 };
-                Span<byte> testNewDataSpan = testNewData;
-                testNewDataSpan.CopyTo(testNativeArray);
-
-                for (int i = 0; i < testNewData.Length; i++)
-                {
-                    Assert.AreEqual(testNewData[i], testNativeArray[i]);
-                }
+                TestUtils.ValidateArrays(testNativeArray, testReadOnlySpan);
             }
             finally
             {
@@ -52,18 +52,17 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
             }
         }
 
-        [Test]
-        public void ToNativeArrayReadOnlyTest()
+        [GenericTestCase(typeof(byte), new byte[]{1, 4, 6, 7, 54, 98})]
+        [GenericTestCase(typeof(int), new[]{54, 76, 129, 7000, 438, 57, 192, 69})]
+        [GenericTestCase(typeof(float), new[]{0.0002456f, 69.420f, 23f, 90032.2f, 47.6f})]
+        public void ToNativeArrayReadOnlyTest<T>(T[] testData)
+            where T : unmanaged
         {
-            byte[] testNewData = { 7, 4, 3, 5 };
-            ReadOnlySpan<byte> testDataSpan = testNewData;
-            NativeArray<byte> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
+            ReadOnlySpan<T> testDataSpan = testData;
+            NativeArray<T> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
             try
             {
-                for (int i = 0; i < testNewData.Length; i++)
-                {
-                    Assert.AreEqual(testNewData[i], nativeArray[i]);
-                }
+                TestUtils.ValidateArrays(nativeArray, testDataSpan);
             }
             finally
             {
@@ -71,18 +70,17 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
             }
         }
         
-        [Test]
-        public void ToNativeArrayTest()
+        [GenericTestCase(typeof(byte), new byte[]{1, 4, 6, 7, 54, 98})]
+        [GenericTestCase(typeof(int), new[]{54, 76, 129, 7000, 438, 57, 192, 69})]
+        [GenericTestCase(typeof(float), new[]{0.0002456f, 69.420f, 23f, 90032.2f, 47.6f})]
+        public void ToNativeArrayTest<T>(T[] testData)
+            where T : unmanaged
         {
-            byte[] testNewData = { 7, 4, 3, 5 };
-            Span<byte> testDataSpan = testNewData;
-            NativeArray<byte> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
+            Span<T> testDataSpan = testData;
+            NativeArray<T> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
             try
             {
-                for (int i = 0; i < testNewData.Length; i++)
-                {
-                    Assert.AreEqual(testNewData[i], nativeArray[i]);
-                }
+                TestUtils.ValidateArrays(nativeArray, testDataSpan);
             }
             finally
             {

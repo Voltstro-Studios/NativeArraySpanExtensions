@@ -4,7 +4,7 @@ using Unity.Collections;
 
 namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
 {
-    public class NativeSliceExtensionsTests
+    public class NativeArrayExtensionsTests
     {
         [GenericTestCase(typeof(byte), new byte[]{1, 4, 6, 7, 54, 98})]
         [GenericTestCase(typeof(int), new[]{54, 76, 129, 7000, 438, 57, 192, 69})]
@@ -13,16 +13,14 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             NativeArray<T> testNativeArray = new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
-            NativeSlice<T> testNativeSlice = testNativeArray.Slice();
-
             try
             {
                 Assert.IsTrue(testNativeArray.IsCreated);
 
                 Span<T> testSpan = testData;
-                testNativeSlice.CopyFrom(testSpan);
+                testNativeArray.CopyFrom(testSpan);
                 
-                ValidateArrays(testNativeSlice, testSpan);
+                TestUtils.ValidateArrays(testNativeArray, testSpan);
             }
             finally
             {
@@ -37,30 +35,18 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             NativeArray<T> testNativeArray = new(testData, Allocator.Temp);
-            NativeSlice<T> testNativeSlice = testNativeArray.Slice();
-            
             try
             {
                 Assert.IsTrue(testNativeArray.IsCreated);
 
                 Span<T> testSpan = new T[testData.Length];
-                testNativeSlice.CopyTo(testSpan);
+                testNativeArray.CopyTo(testSpan);
 
-                ValidateArrays(testNativeSlice, testSpan);
+                TestUtils.ValidateArrays(testNativeArray, testSpan);
             }
             finally
             {
                 testNativeArray.Dispose();
-            }
-        }
-        
-        private static void ValidateArrays<T>(NativeSlice<T> nativeArray, ReadOnlySpan<T> span)
-            where T : unmanaged
-        {
-            Assert.AreEqual(nativeArray.Length, span.Length);
-            for (int i = 0; i < nativeArray.Length; i++)
-            {
-                Assert.AreEqual(nativeArray[i], span[i]);
             }
         }
     }
