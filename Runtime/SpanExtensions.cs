@@ -31,5 +31,33 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions
         {
             dst.CopyFrom(source);
         }
+
+        /// <summary>
+        ///     Creates a <see cref="NativeArray{T}"/> from a <see cref="Span{T}"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="allocator"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static NativeArray<T> ToNativeArray<T>(this Span<T> source, Allocator allocator)
+            where T : unmanaged
+        {
+            return ToNativeArray((ReadOnlySpan<T>)source, allocator);
+        }
+
+        /// <summary>
+        ///     Creates a <see cref="NativeArray{T}"/> from a <see cref="ReadOnlySpan{T}"/>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="allocator"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static NativeArray<T> ToNativeArray<T>(this ReadOnlySpan<T> source, Allocator allocator)
+            where T : unmanaged
+        {
+            NativeArray<T> newArray = new(source.Length, allocator, NativeArrayOptions.UninitializedMemory);
+            newArray.CopyFrom(source);
+            return newArray;
+        }
     }
 }

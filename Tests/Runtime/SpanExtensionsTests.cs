@@ -51,5 +51,43 @@ namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
                 testNativeArray.Dispose();
             }
         }
+
+        [Test]
+        public void ToNativeArrayReadOnlyTest()
+        {
+            byte[] testNewData = { 7, 4, 3, 5 };
+            ReadOnlySpan<byte> testDataSpan = testNewData;
+            NativeArray<byte> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
+            try
+            {
+                for (int i = 0; i < testNewData.Length; i++)
+                {
+                    Assert.AreEqual(testNewData[i], nativeArray[i]);
+                }
+            }
+            finally
+            {
+                nativeArray.Dispose();
+            }
+        }
+        
+        [Test]
+        public void ToNativeArrayTest()
+        {
+            byte[] testNewData = { 7, 4, 3, 5 };
+            Span<byte> testDataSpan = testNewData;
+            NativeArray<byte> nativeArray = testDataSpan.ToNativeArray(Allocator.Temp);
+            try
+            {
+                for (int i = 0; i < testNewData.Length; i++)
+                {
+                    Assert.AreEqual(testNewData[i], nativeArray[i]);
+                }
+            }
+            finally
+            {
+                nativeArray.Dispose();
+            }
+        }
     }
 }
