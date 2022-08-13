@@ -1,8 +1,8 @@
 {
-  "name": "dev.voltstro.unitynativearrayspanextensions",
-  "displayName": "Unity Native Array Span Extensions",
+  "name": "dev.voltstro.nativearrayspanextensions",
+  "displayName": "Native Array Span Extensions",
   "version": "1.0.0",
-  "description": "Proves Span/Memory extensions to Unity's NativeArray",
+  "description": "Provides extensions to Unity's NativeArray that make using .NET's Span<T> with them easier",
   "unity": "2021.3",
   "keywords": [
     "native",
