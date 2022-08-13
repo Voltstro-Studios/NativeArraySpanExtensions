@@ -5,7 +5,7 @@ using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 
 //FROM: https://stackoverflow.com/a/40619376
-namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
+namespace VoltstroStudios.NativeArraySpanExtensions.Tests
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class GenericTestCaseAttribute : TestCaseAttribute, ITestBuilder

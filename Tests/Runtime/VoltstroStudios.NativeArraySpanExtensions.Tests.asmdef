@@ -1,10 +1,10 @@
 {
-    "name": "VoltstroStudios.UnityNativeArraySpanExtensions.Tests",
-    "rootNamespace": "VoltstroStudios.UnityNativeArraySpanExtensions.Tests",
+    "name": "VoltstroStudios.NativeArraySpanExtensions.Tests",
+    "rootNamespace": "VoltstroStudios.NativeArraySpanExtensions.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "VoltstroStudios.UnityNativeArraySpanExtensions"
+        "VoltstroStudios.NativeArraySpanExtensions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

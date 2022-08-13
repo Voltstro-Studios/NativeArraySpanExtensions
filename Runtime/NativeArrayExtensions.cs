@@ -2,7 +2,7 @@ using System;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 
-namespace VoltstroStudios.UnityNativeArraySpanExtensions
+namespace VoltstroStudios.NativeArraySpanExtensions
 {
     /// <summary>
     ///     Provides <see cref="Span{T}"/> copying utils to <see cref="NativeArray{T}"/>

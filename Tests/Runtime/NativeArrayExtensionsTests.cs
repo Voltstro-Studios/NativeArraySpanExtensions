@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 using Unity.Collections;
 
-namespace VoltstroStudios.UnityNativeArraySpanExtensions.Tests
+namespace VoltstroStudios.NativeArraySpanExtensions.Tests
 {
     public class NativeArrayExtensionsTests
     {

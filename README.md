@@ -1,6 +1,10 @@
 # Native Array Span Extensions
 
-Provides extensions to Unity's `NativeArray<T>` that make using .NET's Span<T> with them easier
+[![License](https://img.shields.io/github/license/Voltstro-Studios/NativeArraySpanExtensions.svg)](/LICENSE.md)
+[![Discord](https://img.shields.io/badge/Discord-Voltstro-7289da.svg?logo=discord)](https://discord.voltstro.dev) 
+[![YouTube](https://img.shields.io/badge/Youtube-Voltstro-red.svg?logo=youtube)](https://www.youtube.com/Voltstro)
+
+Provides extensions to Unity's `NativeArray<T>` that make using .NET's Span<T> with them easier.
 
 ## Features
 
@@ -9,7 +13,7 @@ Provides extensions to Unity's `NativeArray<T>` that make using .NET's Span<T> w
     - `CopyFrom` for copying from a `ReadOnlySpan<T>`
     - Same extensions are also available for `NativeSlice<T>`
 - Provides theses extensions to `Span<T>` and `ReadOnlySpan<T>`:
-    - `CopyTo` for copying a Span to a `NativeArray<T>`
+    - `CopyTo` for copying a span to a `NativeArray<T>`
     - `ToNativeArray` for creating a new `NativeArray<T>` and copying the span's buffer to it
 
 ## Getting Started
@@ -52,3 +56,11 @@ To install it via the package manager with git you will need to:
 2. Click on the little + sign **->** Add package from git URL...
 3. Type `https://github.com/Voltstro-Studios/NativeArraySpanExtensions.git` and add it
 4. Unity will now download and install the package
+
+## Authors
+
+**Voltstro** - *Initial Work* - [Voltstro](https://github.com/Voltstro)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.md) file for details.

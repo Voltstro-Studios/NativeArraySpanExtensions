@@ -1,6 +1,6 @@
 {
-    "name": "VoltstroStudios.UnityNativeArraySpanExtensions",
-    "rootNamespace": "VoltstroStudios.UnityNativeArraySpanExtensions",
+    "name": "VoltstroStudios.NativeArraySpanExtensions",
+    "rootNamespace": "VoltstroStudios.NativeArraySpanExtensions",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
