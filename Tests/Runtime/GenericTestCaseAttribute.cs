@@ -11,6 +11,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
     public class GenericTestCaseAttribute : TestCaseAttribute, ITestBuilder
     {
         private readonly Type type;
+
         public GenericTestCaseAttribute(Type type, params object[] arguments) : base(arguments)
         {
             this.type = type;
@@ -23,6 +24,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
                 IMethodInfo gm = method.MakeGenericMethod(type);
                 return BuildFrom(gm, suite);
             }
+
             return BuildFrom(method, suite);
         }
     }

@@ -11,9 +11,9 @@ namespace VoltstroStudios.NativeArraySpanExtensions
             int length)
             where T : unmanaged
         {
-            UnsafeUtility.MemCpy((void*) ((IntPtr) dst + dstIndex * UnsafeUtility.SizeOf<T>()), 
-                (void*) ((IntPtr) src + srcIndex * UnsafeUtility.SizeOf<T>()), 
-                (long) (length * UnsafeUtility.SizeOf<T>()));
+            UnsafeUtility.MemCpy((void*)((IntPtr)dst + dstIndex * UnsafeUtility.SizeOf<T>()),
+                (void*)((IntPtr)src + srcIndex * UnsafeUtility.SizeOf<T>()),
+                length * UnsafeUtility.SizeOf<T>());
         }
 
         [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]

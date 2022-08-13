@@ -10,10 +10,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             Assert.AreEqual(nativeArray.Length, span.Length);
-            for (int i = 0; i < nativeArray.Length; i++)
-            {
-                Assert.AreEqual(nativeArray[i], span[i]);
-            }
+            for (int i = 0; i < nativeArray.Length; i++) Assert.AreEqual(nativeArray[i], span[i]);
         }
     }
 }

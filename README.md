@@ -1,7 +1,7 @@
 # Native Array Span Extensions
 
 [![License](https://img.shields.io/github/license/Voltstro-Studios/NativeArraySpanExtensions.svg)](/LICENSE.md)
-[![Discord](https://img.shields.io/badge/Discord-Voltstro-7289da.svg?logo=discord)](https://discord.voltstro.dev) 
+[![Discord](https://img.shields.io/badge/Discord-Voltstro-7289da.svg?logo=discord)](https://discord.voltstro.dev)
 [![YouTube](https://img.shields.io/badge/Youtube-Voltstro-red.svg?logo=youtube)](https://www.youtube.com/Voltstro)
 
 Provides extensions to Unity's `NativeArray<T>` that make using .NET's Span<T> with them easier.
@@ -34,7 +34,8 @@ There are three main sources on how you can install this package. Pick which eve
 
 #### Voltstro UPM Registry
 
-You can install this package from our custom UPM registry. To setup our registry, see [here](https://github.com/Voltstro/VoltstroUPM#setup).
+You can install this package from our custom UPM registry. To setup our registry,
+see [here](https://github.com/Voltstro/VoltstroUPM#setup).
 
 Once you have the registry added to your project, you can install it like any other package via the package manager.
 
@@ -45,7 +46,7 @@ You can install this package via [OpenUPM](https://openupm.com/).
 To install it, use their CLI:
 
 ```bash
-openupm-cli add dev.voltstro.nativearrayspanextensions
+openupm add dev.voltstro.nativearrayspanextensions
 ```
 
 #### Git

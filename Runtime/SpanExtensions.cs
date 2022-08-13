@@ -4,12 +4,12 @@ using Unity.Collections;
 namespace VoltstroStudios.NativeArraySpanExtensions
 {
     /// <summary>
-    ///     Provides <see cref="NativeArray{T}"/> copying utils to <see cref="Span{T}"/>
+    ///     Provides <see cref="NativeArray{T}" /> copying utils to <see cref="Span{T}" />
     /// </summary>
     public static class SpanExtensions
     {
         /// <summary>
-        ///     Copy data from a <see cref="Span{T}"/> to a <see cref="NativeArray{T}"/>
+        ///     Copy data from a <see cref="Span{T}" /> to a <see cref="NativeArray{T}" />
         /// </summary>
         /// <param name="source"></param>
         /// <param name="dst"></param>
@@ -17,11 +17,11 @@ namespace VoltstroStudios.NativeArraySpanExtensions
         public static void CopyTo<T>(this Span<T> source, NativeArray<T> dst)
             where T : unmanaged
         {
-            CopyTo((ReadOnlySpan<T>) source, dst);
+            CopyTo((ReadOnlySpan<T>)source, dst);
         }
-        
+
         /// <summary>
-        ///     Copy data from a <see cref="ReadOnlySpan{T}"/> to a <see cref="NativeArray{T}"/>
+        ///     Copy data from a <see cref="ReadOnlySpan{T}" /> to a <see cref="NativeArray{T}" />
         /// </summary>
         /// <param name="source"></param>
         /// <param name="dst"></param>
@@ -33,7 +33,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions
         }
 
         /// <summary>
-        ///     Creates a <see cref="NativeArray{T}"/> from a <see cref="Span{T}"/>
+        ///     Creates a <see cref="NativeArray{T}" /> from a <see cref="Span{T}" />
         /// </summary>
         /// <param name="source"></param>
         /// <param name="allocator"></param>
@@ -46,7 +46,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions
         }
 
         /// <summary>
-        ///     Creates a <see cref="NativeArray{T}"/> from a <see cref="ReadOnlySpan{T}"/>
+        ///     Creates a <see cref="NativeArray{T}" /> from a <see cref="ReadOnlySpan{T}" />
         /// </summary>
         /// <param name="source"></param>
         /// <param name="allocator"></param>

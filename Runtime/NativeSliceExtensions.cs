@@ -5,12 +5,12 @@ using Unity.Collections.LowLevel.Unsafe;
 namespace VoltstroStudios.NativeArraySpanExtensions
 {
     /// <summary>
-    ///     Provides <see cref="Span{T}"/> copying utils to <see cref="NativeSlice{T}"/>
+    ///     Provides <see cref="Span{T}" /> copying utils to <see cref="NativeSlice{T}" />
     /// </summary>
     public static class NativeSliceExtensions
     {
         /// <summary>
-        ///     Copy data from a <see cref="ReadOnlySpan{T}"/> to a <see cref="NativeSlice{T}"/>
+        ///     Copy data from a <see cref="ReadOnlySpan{T}" /> to a <see cref="NativeSlice{T}" />
         /// </summary>
         /// <param name="array"></param>
         /// <param name="source"></param>
@@ -29,9 +29,9 @@ namespace VoltstroStudios.NativeArraySpanExtensions
                 Utils.Copy<T>(srcPtr, 0, dstPtr, 0, array.Length);
             }
         }
-        
+
         /// <summary>
-        ///     Copy data from a <see cref="NativeSlice{T}"/> to a <see cref="Span{T}"/>
+        ///     Copy data from a <see cref="NativeSlice{T}" /> to a <see cref="Span{T}" />
         /// </summary>
         /// <param name="array"></param>
         /// <param name="dst"></param>
