@@ -55,7 +55,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions
         public static NativeArray<T> ToNativeArray<T>(this ReadOnlySpan<T> source, Allocator allocator)
             where T : unmanaged
         {
-            NativeArray<T> newArray = new(source.Length, allocator, NativeArrayOptions.UninitializedMemory);
+            NativeArray<T> newArray = new NativeArray<T>(source.Length, allocator, NativeArrayOptions.UninitializedMemory);
             newArray.CopyFrom(source);
             return newArray;
         }
