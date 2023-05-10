@@ -1,22 +1,23 @@
 {
-  "name": "VoltstroStudios.NativeArraySpanExtensions.Tests",
-  "rootNamespace": "VoltstroStudios.NativeArraySpanExtensions.Tests",
-  "references": [
-    "UnityEngine.TestRunner",
-    "UnityEditor.TestRunner",
-    "VoltstroStudios.NativeArraySpanExtensions"
-  ],
-  "includePlatforms": [],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": true,
-  "precompiledReferences": [
-    "nunit.framework.dll"
-  ],
-  "autoReferenced": false,
-  "defineConstraints": [
-    "UNITY_INCLUDE_TESTS"
-  ],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "VoltstroStudios.NativeArraySpanExtensions.Tests",
+    "rootNamespace": "VoltstroStudios.NativeArraySpanExtensions.Tests",
+    "references": [
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "VoltstroStudios.NativeArraySpanExtensions"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "System.Memory.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

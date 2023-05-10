@@ -13,7 +13,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             NativeArray<T> testNativeArray =
-                new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+                new NativeArray<T>(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
             NativeSlice<T> testNativeSlice = testNativeArray.Slice();
 
             try
@@ -37,7 +37,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
         public void CopyTo<T>(T[] testData)
             where T : unmanaged
         {
-            NativeArray<T> testNativeArray = new(testData, Allocator.Temp);
+            NativeArray<T> testNativeArray = new NativeArray<T>(testData, Allocator.Temp);
             NativeSlice<T> testNativeSlice = testNativeArray.Slice();
 
             try

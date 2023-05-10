@@ -13,7 +13,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             NativeArray<T> testNativeArray =
-                new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+                new NativeArray<T>(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
 
             try
             {
@@ -37,7 +37,7 @@ namespace VoltstroStudios.NativeArraySpanExtensions.Tests
             where T : unmanaged
         {
             NativeArray<T> testNativeArray =
-                new(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
+                new NativeArray<T>(testData.Length, Allocator.Temp, NativeArrayOptions.UninitializedMemory);
 
             try
             {
