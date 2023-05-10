@@ -23,10 +23,17 @@ Provides extensions to Unity's `NativeArray<T>` that make using .NET's Span<T> w
 #### Prerequisites
 
 ```
-Unity 2021.3.x
+Unity 2020.3.x
+(Unity 2021.3.x is the recommended version however)
 ```
 
 (Newer Unity versions should be fine as well)
+
+#### Unity 2020.3.x Prerequisites
+
+**IF YOU ARE USING UNITY 2020.3.x WITH THIS PACKAGE, READ THIS**. (Newer versions do not need this step!)
+
+`System.Memory` dll is required (this is where `Span<T>` use to come from). This package it self has no direct dependent installation method for `System.Memory`. You can either install it directly into your Unity project from [NuGet](https://www.nuget.org/packages/System.Memory) (by extracting it from the `.nupkg` file), or via an automatic seamless UPM integration, such as [Voltstro UPM](https://github.com/Voltstro/VoltstroUPM#using-unitynuget-packages), [OpenUPM](https://openupm.com/nuget/), or [UnityNuGet](https://github.com/xoofx/UnityNuGet).
 
 ### Installation Methods
 
